@@ -13,13 +13,14 @@ console.log(removeEWords('Enter the building')); // 'building'
 */
 
 let removeEWords = function(sentence) {
+  sentence = sentence.split(' ');
     // Your code here
+    return sentence.filter((word) => word.indexOf('e') === -1).join(' ');
 };
-
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
 try {
   module.exports = removeEWords;
 } catch (e) {
   module.exports = null;
-}
+}

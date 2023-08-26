@@ -15,9 +15,26 @@ console.log(hasThreeVowels('dog'));             //  false
 console.log(hasThreeVowels('go home'));         //  false
 
 */
-
+// Count vowels
 let hasThreeVowels = function(string) {
     // Your code here
+    let counter = 0;
+    let vowels = 'aeiou';
+    let seen = '';
+
+    string = string.split('');
+    string.forEach(letter => {
+        if (vowels.includes(letter) && !seen.includes(letter)) {
+            counter++;
+            seen += letter;
+        }
+    })
+
+    if (counter >= 3) {
+        return true;
+    }
+
+    return false;
 };
 
 // Your code here
@@ -28,4 +45,4 @@ try {
     module.exports = hasThreeVowels;
 } catch (e) {
     module.exports = null;
-}
+}

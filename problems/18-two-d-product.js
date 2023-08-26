@@ -25,13 +25,27 @@ console.log(twoDimensionalProduct(arr2)); // 88
 
 */
 
-let twoDimensionalProduct = function(arr) {
-    // Your code here
-};
+let twoDimensionalProduct = function (arr) {
+  // Your code here
+  let initialProduct = arr[0][0];
+  return arr.reduce((accumulator, currentValue) => {
+    // console.log(currentValue)
+    // currentValue.forEach(element => {
+    //   console.log(accumulator *= element);
+    // });
+    return accumulator * currentValue.reduce((rowAccumulator, element) => rowAccumulator * element, 1);
+  }, 1);
+}
+
+let arr2 = [
+  [11, 4],
+  [2]
+];
+console.log(twoDimensionalProduct(arr2)); // 88
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
 try {
-    module.exports = twoDimensionalProduct;
+  module.exports = twoDimensionalProduct;
 } catch (e) {
-    module.exports = null;
+  module.exports = null;
 }

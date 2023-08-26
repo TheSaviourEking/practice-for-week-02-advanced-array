@@ -9,4 +9,3 @@ describe('sumForEach()', function () {
     assert.equal(sumForEach([]), 0);
   });
 });
-

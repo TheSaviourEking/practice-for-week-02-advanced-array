@@ -16,6 +16,13 @@ console.log(unique(['a', 'b', 'c', 'b'])); // ['a', 'b', 'c']
 
 let unique = function(array) {
     // Your code here
+    let seen = '';
+    return array.filter(element => {
+        if (!seen.includes(element)) {
+            seen += element;
+            return element;
+        }
+    })
 };
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
@@ -24,4 +31,4 @@ try {
     module.exports = unique;
 } catch (e) {
     module.exports = null;
-}
+}
